@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap">
+
+    <style>
+   body {
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding: 20px 0;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+}
+
+#nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+#nav a:hover {
+    color: #fff;
+    border-bottom: 2px solid #f1c40f;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: #f1c40f;
+}
+
+@media (max-width: 800px) {
+    #nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    #nav.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+.header1 {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header1 h1 {
+    font-size: 38px;
+    color: #ffeb3b;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: #FFD700;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.underline {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, #f0e68c, #e67e22);
+    margin: 5px auto;
+    animation: expand 1s ease-in-out;
+}
+
+@keyframes expand {
+    0% { width: 0; }
+    100% { width: 80%; }
+}
+
+.container {
+    padding: 20px 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #FFD700;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.section {
+    border-radius: 28px;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideInSection 1s ease-out;
+}
+
+@keyframes slideInSection {
+    0% { transform: translateY(50%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.entry {
+    border: 1px solid #FFD700;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+    position: relative;
+    animation: slideInEntry 1s ease-out;
+}
+
+@keyframes slideInEntry {
+    0% { transform: translateY(50%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.entry:hover {
+    transform: scale(1.02);
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: #ffd900f8;
+    margin-right: 15px;
+}
+
+.icon {
+    width: 80px;
+    height: 50px;
+    margin-right: 15px;
+    color: #f1c40f;
+}
+
+.text-content {
+    margin-left: 15px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+h5 {
+    margin-bottom: 10px;
+}
+
+.company, .description {
+    margin-bottom: 5px;
+}
+
+.entry::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 2px 2px;
+}
+
+.entry p {
+    z-index: 1;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 9999;
+    }
+
+    .sidebar a {
+        color: #fff;
+        padding: 20px;
+        font-size: 1.5em;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}
+
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger">&#9776;</div> 
+        <nav id="nav" class="sidebar">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-user"></i> About Me</a>
+            <a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a>
+            <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
+          
+            <a href="projects.html"><i class="fas fa-tasks"></i> Projects</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="dreams.html"><i class="fas fa-cloud"></i> Dreams</a>
+        </nav>
+    </header>
+    <div class="header1">
+        <h1>My Resume</h1>
+        <div class="icon"><i class="fas fa-file-alt"></i></div>
+    </div>
+    <div class="underline"></div>
+    <div class="underline" style="width: 40%;"></div>
+    <div class="underline" style="width: 40%;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="underline"></div>
+                    <div class="underline"></div>
+                    
+                  
+                    
+                    <div class="entry">
+                        <div class="line"></div>
+                        <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="text-content">
+                            <h5>Bachelor's Degree in Computer Science</h5>
+                            <p class="company">
+                                Cairo University
+                               </p>
+                            <p class="description">Studied computer science and artificial intelligence.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <div class="line"></div>
+                        <div class="icon"><i class="fas fa-university"></i></div>
+                        <div class="text-content">
+                            <h5>Bachelor's Degree in Computer Science</h5>
+                            <p class="company"> Cairo University</p>
+                            <p class="description">
+                               
+                                Computing and Bioinformatics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="section">
+                    
+
+<h2 class="section-title"><i class="fas fa-laptop-code"></i> Experience</h2>
+<div class="underline"></div>
+<div class="underline"></div>
+
+                    <div class="entry">
+                        <div class="line"></div>
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="text-content">
+                            <h5>Front End Developer</h5>
+                            <p class="company">Information Technology Institute (ITI) </p>
+                            <p class="description">Assisted in the design and development of user-friendly web interfaces.  
+                                Implemented responsive design principles to enhance user experience. </p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <div class="line"></div>
+                        <div class="icon"><i class="fas fa-code"></i></div>
+                        <div class="text-content">
+                            <h5> Web Designer </h5>
+                            <p class="company">National Telecommunication Institute (NTI)  </p>
+                            <p class="description">Designed and developed visually appealing web pages and interfaces.  
+                                Worked closely with clients to understand their design requirements and preferences. .</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <div class="line"></div>
+                        <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="text-content">
+                            <h5>Instructor  </h5>
+                            <p class="company">  
+                                Academy | Helwan  </p>
+                            <p class="description">Assisted middle and high school students in programming fundamentals, fostering their 
+                                passion and skills through effective communication and teaching techniques..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+ document.getElementById('hamburger').addEventListener('click', function() {
+    var nav = document.getElementById('nav');
+    nav.classList.toggle('show');
+});
+
+    </script>
+</body>
+</html>
+

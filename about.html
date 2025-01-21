@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger">&#9776;</div> 
+        <nav id="nav" class="sidebar">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-user"></i> About Me</a>
+            <a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a>
+            <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
+            
+            <a href="projects.html"><i class="fas fa-tasks"></i> Projects</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="dreams.html"><i class="fas fa-cloud"></i> Dreams</a>
+        </nav>
+    </header>
+    <div class="header-title">
+        <i class="fas fa-user"></i>
+        <span>About Me</span>
+    </div>
+    <div class="header-underline">
+        <div class="underline"></div>
+        <div class="underline"></div>
+    </div>
+    <div class="content">
+        <div class="about-me">
+            <div class="about-me-text">
+                <div class="text-style">
+                    <p><strong>Software Engineer</strong></p>
+                    <p>My name is <span class="highlight">Mona Fakhri</span>. I am a student in 
+                        the computer science program at <span class="highlight">Cairo University</span>,I am a <span class="highlight">Front-End Developer </span>
+                        student, specializing in <span class="highlight"> HTML, CSS, and JavaScript.</span> I am 
+                        working on enhancing my skills in designing innovative and engaging user interfaces. I 
+                        believe in teamwork and focus on delivering an excellent user experience. I am 
+                        committed to continuous learning and exploring new technologies to achieve effective 
+                        results. 
+                         ,interested in analyzing biological data for bioinformatics. I use the <span class="highlight">R programming language and Linux </span>
+                          operating system for next-generation data analysis. I am also interested in<span class="highlight"> building machine learning models</span> using <span class="highlight">Python</span> and <span class="highlight">TensorFlow</span>📜</p>
+                </div>
+                </div>
+            <div class="border-wrapper">
+                <img src="./images/me.jpg" alt="Illustration of Mona Fakhri at her desk">
+                <i class="fas fa-laptop icon laptop"></i>
+                <i class="fas fa-database icon data"></i>
+                <i class="fas fa-globe icon web"></i>
+                <i class="fas fa-robot icon ml"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const words = document.querySelectorAll('.word');
+            words.forEach((word, index) => {
+                setTimeout(() => {
+                    word.classList.add('visible');
+                }, index * 200);
+            });
+
+            const sections = document.querySelectorAll('.about-me, .border-wrapper, .about-me-text');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add('slide-in');
+                }, index * 300);
+            });
+        });
+        
+document.getElementById('hamburger').addEventListener('click', function() {
+    var nav = document.getElementById('nav');
+    nav.classList.toggle('show');
+});
+
+    </script>
+</body>
+</html>
+<style>
+
+
+body {
+    background-color: black;
+    color: #faf9f7;
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 20px 0;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+}
+
+#nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+#nav a:hover {
+    color: #fff;
+    border-bottom: 2px solid #f1c40f;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: #f1c40f;
+  
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    #nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-top: 70px;
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-me .border-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 10s linear infinite;
+    margin: 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.about-me img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 5px solid #0ff147;
+    position: absolute;
+}
+
+.icon {
+    position: absolute;
+    font-size: 20px; 
+    color: #ff0ac6;
+}
+
+.icon.laptop {
+    top: -10px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon.data {
+    bottom: -10px; 
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.icon.web {
+    top: 50%;
+    left: -10px; 
+    transform: translateY(-50%);
+}
+
+.icon.ml {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-me-text {
+    max-width: 50%;
+    margin-right: 100px;
+    min-width: 300px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 1.5em;
+    color: #fcfbf9;
+  
+    animation: slide-in-title 1s ease-out;
+}
+
+@keyframes slide-in-title {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-underline {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px;
+}
+
+.underline {
+    width: 100px; 
+    height: 4px;
+    background-color: #f7c500;
+}
+
+.header-title i {
+    font-size: 2em; 
+    margin-right: 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: black;
+    background-color: #f1c40f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+    width: auto;
+    max-width: 300px;
+}
+
+
+
+        .buttons a { 
+            text-decoration: none;
+            color: black;
+            background-color: #f1c40f;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+            width: auto;
+            max-width: 300px;
+        }
+
+        .buttons a:hover { 
+            background-color: #e67e22;
+        }
+
+        .word { 
+            opacity: 0;
+            transition: opacity 0.5s;
+            display: inline-block;
+        }
+
+        .visible { 
+            opacity: 1;
+        }
+        
+        @media (max-width: 800px) {
+            #nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hamburger { 
+                display: block;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav.active {
+                display: flex;
+            }
+            h1 { 
+                font-size: 2em;
+            }
+            h2 { 
+                font-size: 1.2em;
+            }
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .buttons a {
+                margin: 5px 0;
+                width: 80%;
+            }
+            .about-me {
+                flex-direction: column; 
+                text-align: center;
+            }
+
+            .about-me img,
+            .about-me-text {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+
+           
+        }
+
+   
+@media (max-width: 1200px) {
+    .about-me-text {
+        max-width: 70%;
+        margin-right: 20px;
+    }
+
+    .border-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+    .about-me-text {
+        max-width: 80%;
+        margin-right: 0;
+    }
+
+    .border-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-title {
+        font-size: 1.2em;
+    }
+
+    .header-title i {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-me-text,
+    .border-wrapper {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+   
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar a {
+        color: #fff;
+        padding: 20px;
+        font-size: 1.5em;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}
+
+   
+.text-style {
+    font-size: 1.2em;
+    color: #f1c40f;
+    line-height: 1.5;
+    font-weight: bold;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.highlight {
+    color: #e67e22;
+    background-color: #333;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+ </style>
